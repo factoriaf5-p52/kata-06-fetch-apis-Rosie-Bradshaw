@@ -1,18 +1,34 @@
+let button = document.createElement('button'); 
+    document.body.appendChild(button);
 
+
+button.addEventListener("click", (createNewFact)=>{
 
 
 fetch('https://uselessfacts.jsph.pl/random.json?language=en')
     .then((response) => response.json())
     .then((data)=>{
-        let button = document.createElement('button'); 
-        document.body.appendChild(button);
-        
-        newFact = data.text;
-        console.log(newFact)})
-        
-        newFact = document.createElement('p');
-        document.body.appendChild(newFact);
+        let createNewFact = document.createElement('p');
+        let newFactText = document.createTextNode(data.text);
+        createNewFact.appendChild(newFactText);
+        document.body.appendChild(createNewFact);
 
+        
+        console.log(newFactText)
+        
+       
+
+        return newFactText;
+        })
+
+    
+        
+        
+        }
+        
+
+    )
+ 
 
 
 //api ----> https://pokeapi.co/api/v2/pokemon/
